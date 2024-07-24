@@ -32,8 +32,19 @@ const config = {
         blog: {
           routeBasePath: '/',
           showReadingTime: true,
-          editUrl:
-            'https://github.com/tsra0ne/blog-theswiftguy/blob/main/',
+          editUrl: 'https://github.com/tsra0ne/blog-theswiftguy/blob/main/',
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} The Swift Guy.`,
+            createFeedItems: async (params) => {
+              const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+              return defaultCreateFeedItems({
+                // keep only the 10 most recent blog posts in the feed
+                blogPosts: blogPosts.filter((item, index) => index < 10),
+                ...rest,
+              });
+            },
+          }
         }
       }),
     ],
