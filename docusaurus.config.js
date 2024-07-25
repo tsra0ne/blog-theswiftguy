@@ -88,6 +88,7 @@ const config = {
           alt: 'The Swift Guys Logo',
           src: 'img/logo.png',
         },
+        hideOnScroll: true,
         items: [
           {
             href: 'https://github.com/tsra0ne/blog-theswiftguy',
