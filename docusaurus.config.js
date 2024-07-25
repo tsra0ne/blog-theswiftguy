@@ -37,6 +37,7 @@ const config = {
           blogSidebarCount: 'ALL',
           routeBasePath: '/',
           showReadingTime: true,
+          showLastUpdateTime: true,
           editUrl: 'https://github.com/tsra0ne/blog-theswiftguy/blob/main/',
           feedOptions: {
             type: 'all',
@@ -96,11 +97,19 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Learn',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Swift',
+                to: 'https://theswiftguy.in/swift/basics',
+              },
+              {
+                label: 'SwiftUI',
+                to: 'https://theswiftguy.in/swiftui/introduction',
+              },
+              {
+                label: 'UIKit',
+                to: 'https://theswiftguy.in/uikit/integrating-swiftui-into-uikit',
               },
             ],
           },
@@ -108,16 +117,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'GitHub Discussions',
+                href: 'https://github.com/tsra0ne/blog-theswiftguy/discussions',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://discord.gg/9qAT2vgVy7',
               },
             ],
           },
@@ -135,7 +140,7 @@ const config = {
       },
       prism: {
         theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        darkTheme: prismThemes.vsDark,
       },
     }),
 };
