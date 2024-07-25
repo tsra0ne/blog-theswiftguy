@@ -30,6 +30,11 @@ const config = {
       ({
         docs: false,
         blog: {
+          blogTitle: 'The Swift Guy Blog',
+          blogDescription: 'Learn Swift, SwiftUI and UIKit',
+          postsPerPage: 'ALL',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
           routeBasePath: '/',
           showReadingTime: true,
           editUrl: 'https://github.com/tsra0ne/blog-theswiftguy/blob/main/',
@@ -44,6 +49,18 @@ const config = {
                 ...rest,
               });
             },
+          }
+        },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const {defaultCreateSitemapItems, ...rest} = params;
+            const items = await defaultCreateSitemapItems(rest);
+            return items.filter((item) => !item.url.includes('/page/'));
           }
         }
       }),
