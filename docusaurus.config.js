@@ -63,6 +63,9 @@ const config = {
             const items = await defaultCreateSitemapItems(rest);
             return items.filter((item) => !item.url.includes('/page/'));
           }
+        },
+        theme: {
+          customCss: ['./src/css/custom.css']
         }
       }),
     ],
